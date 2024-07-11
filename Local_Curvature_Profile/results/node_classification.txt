@@ -1,0 +1,4 @@
+RESULTS FOR texas (fosr):
+average acc: 0.5391304347826087
+plus/minus:  0.032997679932191784
+

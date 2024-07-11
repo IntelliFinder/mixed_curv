@@ -34,17 +34,19 @@ def add_node_attr(
 
     return data
 
+gnn_model_name = "GCN"
+
 default_args = AttrDict({
     "dropout": 0.5,
     "num_layers": 3,
     "hidden_dim": 128,
     "learning_rate": 1e-3,
-    "layer_type": "GCN",
+    "layer_type": gnn_model_name,
     "display": True,
     "num_trials": 10,
     "eval_every": 1,
     "rewiring": "fosr",
-    "num_iterations": 50,
+    "num_iterations": 100,
     "num_relations": 2,
     "patience": 100,
     "dataset": None,
@@ -58,6 +60,12 @@ default_args = AttrDict({
 results = []
 args = default_args
 args += get_args_from_input()
+
+# mixed_emb_filename = 'test_vec.pt' # todo load coordinates
+# mixed_emb_filename = 'Texas_s2h2e3.pt'
+# mixed_emb_filename = 'Texas_h2e0.pt'
+mixed_emb_filename = 'Texas_s2h0e0.pt'
+
 
 # encode the dataset using the given encoding, if args.encoding is not None
 if args.encoding in ["LAPE", "RWPE", "LCP", "LDP", "SUB", "EGO", "EMB"]:
@@ -88,8 +96,10 @@ if args.encoding in ["LAPE", "RWPE", "LCP", "LDP", "SUB", "EGO", "EMB"]:
         print(f"Encoding Local Curvature Profile (ORC)")
 
     elif args.encoding == "EMB":
-        values = np.random.rand(183, 3)
-        values = torch.asarray(values)
+        #values = np.random.rand(183, 3)
+        #values = torch.asarray(values)
+
+        values = torch.load(mixed_emb_filename)
 
         def emb_transform(data):
             return add_node_attr(data, values)
@@ -102,7 +112,8 @@ if args.encoding in ["LCP", "LAPE", "RWPE", "LDP", "SUB", "EGO", "EMB"]:
     # cornell = WebKB(root="data", name="Cornell", transform=transform)
     # wisconsin = WebKB(root="data", name="Wisconsin", transform=transform)
     texas = WebKB(root="data", name="Texas")
-    texas.data = transform(texas.data)
+    texas.data = transform(texas.data) # for baseline
+    
     # chameleon = WikipediaNetwork(root="data", name="chameleon", transform=transform)
     # cora = Planetoid(root="data", name="cora", transform=transform)
     # citeseer = Planetoid(root="data", name="citeseer", transform=transform)
@@ -233,7 +244,7 @@ for key in datasets:
     end = time.time()
     run_duration = end - start
 
-    log_to_file(f"RESULTS FOR {key} ({args.rewiring}):\n")
+    log_to_file(f"RESULTS FOR {key} (filename: {mixed_emb_filename}, {gnn_model_name}):\n")
     log_to_file(f"average acc: {np.mean(accuracies)}\n")
     log_to_file(f"plus/minus:  {2 * np.std(accuracies)/(args.num_trials ** 0.5)}\n\n")
     results.append({

@@ -25,7 +25,8 @@ def main():
     lr = 1e-1
     num_iter = 50000
     sphere_dim, euclidean_dim, hyperbolic_dim = 2, 2, 2
-    model = ProductManifoldEmbedding(num_nodes, sphere_dim, euclidean_dim, hyperbolic_dim)
+    model = ProductManifoldEmbedding(nx.number_of_nodes(g), sphere_dim, 
+                                     euclidean_dim, hyperbolic_dim)
 
     optimizer = RiemannianSGDProductManifoldOptimizer(model.parameters(), lr=lr)
     scheduler = CosineAnnealingLR(optimizer, T_max=num_iter, eta_min=1e-5)

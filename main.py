@@ -6,15 +6,19 @@ from optimizers.riemannian_sgd import RiemannianSGDProductManifoldOptimizer
 from utils.loss_function import loss_function
 from utils.train import train_product_manifold
 from utils.metrics import scalar_product_hyperbolic
+from torch_geometric.datasets import WebKB, WikipediaNetwork, Actor, Planetoid
+from torch_geometric.utils import to_networkx, from_networkx, to_undirected, dropout_edge
+import torch
+import networkx as nx
 
 def main():
-    # Create graph
-    g = nx.balanced_tree(2, 3)
-    num_nodes = nx.number_of_nodes(g)
-    D = nx.floyd_warshall_numpy(g)
+    texas = WebKB(root="data", name="Texas")
+    #texas.data = to_undirected(texas.data)
+    #texas.data = dropout_edge(texas.data, p=0.1)
+    g = to_networkx(texas.data)
+    
+    D = nx.floyd_warshall_numpy(g.to_undirected())
     dist_matrix = torch.from_numpy(D).float()
-    print(g)
-    print(dist_matrix)
 
     # Set up model and training parameters
     lr = 1e-1
@@ -50,6 +54,7 @@ def main():
 
     # Run tests
     run_tests(final_embeddings, final_loss, initial_loss)
+    return final_embeddings
 
 def print_norms(embeddings, num_nodes):
     print("\nNorms of final embedded coordinates:")
@@ -93,6 +98,5 @@ def run_tests(embeddings, final_loss, initial_loss):
         print("Test passed: All embeddings satisfy the hyperboloid constraint")
     else:
         print("Warning: Not all embeddings satisfy the hyperboloid constraint")
-
 if __name__ == "__main__":
     main()

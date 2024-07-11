@@ -12,6 +12,7 @@ import torch
 import networkx as nx
 
 def main():
+    """Returns an hyperbolic embedding of the texas dataset graph"""
     texas = WebKB(root="data", name="Texas")
     #texas.data = to_undirected(texas.data)
     #texas.data = dropout_edge(texas.data, p=0.1)
@@ -23,7 +24,7 @@ def main():
     # Set up model and training parameters
     lr = 1e-1
     num_iter = 50000
-    sphere_dim, euclidean_dim, hyperbolic_dim = 1, 1, 10
+    sphere_dim, euclidean_dim, hyperbolic_dim = 2, 2, 2
     model = ProductManifoldEmbedding(num_nodes, sphere_dim, euclidean_dim, hyperbolic_dim)
 
     optimizer = RiemannianSGDProductManifoldOptimizer(model.parameters(), lr=lr)

@@ -198,3 +198,241 @@ RESULTS FOR texas (filename: Texas_s2h0e0.pt, GCN):
 average acc: 0.5326086956521738
 plus/minus:  0.023211039678328934
 
+[0.5130434782608695, 0.4782608695652173, 0.49565217391304356, 0.5326086956521738]
+
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GCN):
+average acc: 0.5391304347826087
+plus/minus:  0.03356566794020658
+
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GCN):
+average acc: 0.5152173913043478
+plus/minus:  0.03256518836708524
+
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GCN):
+average acc: 0.47391304347826085
+plus/minus:  0.03356566794020657
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GCN):
+average acc: 0.5
+plus/minus:  0.03585309239667531
+
+
+[0.5391304347826087, 0.5152173913043478, 0.47391304347826085,0.5]RESULTS FOR texas (filename: Texas_s2h2e0.pt, GCN):
+average acc: 0.5108695652173914
+plus/minus:  0.02553769592276246
+
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GAT):
+average acc: 0.5434782608695652
+plus/minus:  0.03135261978664339
+
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GAT):
+average acc: 0.5239130434782607
+plus/minus:  0.03556192182031049
+
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GAT):
+average acc: 0.5391304347826087
+plus/minus:  0.03975349374143465
+
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GAT):
+average acc: 0.558695652173913
+plus/minus:  0.03480977200217061
+
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GAT):
+average acc: 0.5369565217391304
+plus/minus:  0.0301539841467821
+
+[0.5434782608695652, 0.5239130434782607, 0.5391304347826087,0.558695652173913,0.5369565217391304]RESULTS FOR texas (filename: Texas_s2h2e0.pt, GIN):
+average acc: 0.6282608695652174
+plus/minus:  0.028477431119674462
+
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GIN):
+average acc: 0.6086956521739131
+plus/minus:  0.05635426694267704
+
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GIN):
+average acc: 0.5739130434782609
+plus/minus:  0.03434507418805478
+
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GIN):
+average acc: 0.6391304347826088
+plus/minus:  0.053674084737429434
+
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GIN):
+average acc: 0.6021739130434782
+plus/minus:  0.05802352694070692
+RESULTS FOR texas (filename: Texas_s2h2e0.pt, GIN):
+average acc: 0.6500000000000001
+plus/minus:  0.0457865517109592
+
+[0.6500000000000001,0.6021739130434782,0.6391304347826088,0.6282608695652174,0.6086956521739131]
+
+
+RESULTS FOR texas (filename: test_vec.pt, GCN):
+average acc: 0.5
+plus/minus:  0.03740141420453317
+
+RESULTS FOR texas (filename: test_vec.pt, GCN):
+average acc: 0.5108695652173914
+plus/minus:  0.020623549957619853
+
+RESULTS FOR texas (filename: test_vec.pt, GCN):
+average acc: 0.49347826086956514
+plus/minus:  0.02683704236871473
+
+RESULTS FOR texas (filename: test_vec.pt, GCN):
+average acc: 0.491304347826087
+plus/minus:  0.033226040303552695
+
+RESULTS FOR texas (filename: test_vec.pt, GCN):
+average acc: 0.49347826086956526
+plus/minus:  0.029520426429161663
+
+[0.5,0.5108695652173914,0.49347826086956514,0.491304347826087,0.49347826086956526]RESULTS FOR texas (filename: test_vec.pt, GAT):
+average acc: 0.5369565217391304
+plus/minus:  0.04080939140959066
+
+RESULTS FOR texas (filename: test_vec.pt, GAT):
+average acc: 0.5695652173913043
+plus/minus:  0.03730019232961255
+
+RESULTS FOR texas (filename: test_vec.pt, GAT):
+average acc: 0.5543478260869564
+plus/minus:  0.0240116543851897
+
+RESULTS FOR texas (filename: test_vec.pt, GAT):
+average acc: 0.5130434782608696
+plus/minus:  0.03434507418805478
+
+RESULTS FOR texas (filename: test_vec.pt, GAT):
+average acc: 0.5152173913043478
+plus/minus:  0.03587944527961349
+
+[0.5369565217391304, 0.5695652173913043, 0.5543478260869564, 0.5130434782608696, 0.5152173913043478]RESULTS FOR texas (filename: test_vec.pt, GIN):
+average acc: 0.6565217391304348
+plus/minus:  0.036272441068894275
+
+RESULTS FOR texas (filename: test_vec.pt, GIN):
+average acc: 0.6260869565217392
+plus/minus:  0.022841609628806426
+
+RESULTS FOR texas (filename: test_vec.pt, GIN):
+average acc: 0.6108695652173913
+plus/minus:  0.032215014874509056
+
+RESULTS FOR texas (filename: test_vec.pt, GIN):
+average acc: 0.6304347826086956
+plus/minus:  0.04347826086956521
+
+RESULTS FOR texas (filename: test_vec.pt, GIN):
+average acc: 0.608695652173913
+plus/minus:  0.05499613322031965
+
+RESULTS FOR texas (filename: test_vec.pt, GIN):
+average acc: 0.6152173913043477
+plus/minus:  0.03426241444320964
+
+[0.6260869565217392,0.6108695652173913,0.6304347826086956,0.608695652173913,0.6152173913043477]
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GIN):
+average acc: 0.6086956521739131
+plus/minus:  0.06478114967717973
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GIN):
+average acc: 0.6565217391304349
+plus/minus:  0.02444081621313947
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GIN):
+average acc: 0.6391304347826087
+plus/minus:  0.03206798072101873
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GIN):
+average acc: 0.6043478260869565
+plus/minus:  0.04754860213736458
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GIN):
+average acc: 0.6065217391304347
+plus/minus:  0.05943972817438042
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GIN):
+average acc: 0.6304347826086956
+plus/minus:  0.03637652289278589
+
+
+[0.6565217391304349,0.6391304347826087,0.6043478260869565,0.6065217391304347,0.6304347826086956]RESULTS FOR texas (filename: Texas_s2h0e0.pt, GAT):
+average acc: 0.5282608695652173
+plus/minus:  0.043063236571876114
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GAT):
+average acc: 0.5760869565217391
+plus/minus:  0.04181605230798119
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GAT):
+average acc: 0.532608695652174
+plus/minus:  0.03702040514331826
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GAT):
+average acc: 0.5347826086956522
+plus/minus:  0.023972258699287347
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GAT):
+average acc: 0.5521739130434782
+plus/minus:  0.03898523786340852
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GAT):
+average acc: 0.541304347826087
+plus/minus:  0.027117332399152483
+
+[0.5760869565217391, 0.532608695652174,0.5347826086956522,0.5521739130434782,0.541304347826087]RESULTS FOR texas (filename: Texas_s2h0e0.pt, GCN):
+average acc: 0.4782608695652174
+plus/minus:  0.02817713347133852
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GCN):
+average acc: 0.5152173913043478
+plus/minus:  0.03587944527961349
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GCN):
+average acc: 0.5195652173913043
+plus/minus:  0.04936266775473034
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GCN):
+average acc: 0.5065217391304347
+plus/minus:  0.044360611967598974
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GCN):
+average acc: 0.49347826086956526
+plus/minus:  0.023853681259730797
+
+RESULTS FOR texas (filename: Texas_s2h0e0.pt, GCN):
+average acc: 0.5043478260869565
+plus/minus:  0.04251097934462718
+
+[0.5152173913043478,0.5195652173913043,0.5065217391304347,0.49347826086956526,0.5043478260869565]RESULTS FOR texas (filename: Texas_h2e0.pt, GCN):
+average acc: 0.5
+plus/minus:  0.026801800012908595
+
+RESULTS FOR texas (filename: Texas_h2e0.pt, GCN):
+average acc: 0.4913043478260869
+plus/minus:  0.01963754746197603
+
+RESULTS FOR texas (filename: Texas_h2e0.pt, GCN):
+average acc: 0.5043478260869566
+plus/minus:  0.04295335316601207
+
+RESULTS FOR texas (filename: Texas_h2e0.pt, GCN):
+average acc: 0.482608695652174
+plus/minus:  0.01924864662711187
+
+RESULTS FOR texas (filename: Texas_h2e0.pt, GCN):
+average acc: 0.46521739130434786
+plus/minus:  0.049266836432053186
+
+RESULTS FOR texas (filename: Texas_h2e0.pt, GCN):
+average acc: 0.4717391304347826
+plus/minus:  0.022212243085990957
+
+RESULTS FOR texas (filename: Texas_h2e0.pt, GCN):
+average acc: 0.49782608695652175
+plus/minus:  0.0316227766016838
+
+RESULTS FOR texas (filename: Texas_h2e0.pt, GCN):
+average acc: 0.5217391304347826
+plus/minus:  0.035853092396675314
+

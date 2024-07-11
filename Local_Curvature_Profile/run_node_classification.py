@@ -63,8 +63,9 @@ args += get_args_from_input()
 
 # mixed_emb_filename = 'test_vec.pt' # todo load coordinates
 # mixed_emb_filename = 'Texas_s2h2e3.pt'
-# mixed_emb_filename = 'Texas_h2e0.pt'
-mixed_emb_filename = 'Texas_s2h0e0.pt'
+mixed_emb_filename = 'Texas_h2e0.pt'
+# mixed_emb_filename = 'Texas_s2h0e0.pt'
+# mixed_emb_filename = 'Texas_s2h2e0.pt'
 
 
 # encode the dataset using the given encoding, if args.encoding is not None
@@ -112,7 +113,7 @@ if args.encoding in ["LCP", "LAPE", "RWPE", "LDP", "SUB", "EGO", "EMB"]:
     # cornell = WebKB(root="data", name="Cornell", transform=transform)
     # wisconsin = WebKB(root="data", name="Wisconsin", transform=transform)
     texas = WebKB(root="data", name="Texas")
-    texas.data = transform(texas.data) # for baseline
+    texas.data = transform(texas.data)
     
     # chameleon = WikipediaNetwork(root="data", name="chameleon", transform=transform)
     # cora = Planetoid(root="data", name="cora", transform=transform)

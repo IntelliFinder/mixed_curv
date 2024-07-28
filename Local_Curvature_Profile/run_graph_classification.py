@@ -19,9 +19,6 @@ import pandas as pd
 from hyperparams import get_args_from_input
 from preprocessing import rewiring, sdrf, fosr, digl, borf
 
-import pickle
-import wget
-import zipfile
 import os
 
 

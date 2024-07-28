@@ -35,5 +35,10 @@ def get_args_from_input():
 	parser.add_argument('--borf_batch_add', type=int)
 	parser.add_argument('--borf_batch_remove', type=int)
 	parser.add_argument('--encoding', type=str, help='type of encoding to use for node features')
+	# Mixed curvature embedding params
+	parser.add_argument("--mixed_curved_emb_path", type=str, help="Path to embedding")
+	parser.add_argument('--euclidean_dim', type=int, help='Dimension of the euclidean space', default=0)
+	parser.add_argument('--spherical_dims', type=ast.literal_eval, help='Dimension of the spherical space', default=[0])
+	parser.add_argument('--hyperbolic_dims', type=ast.literal_eval, help='Dimension of the hyperbolic space', default=[0])
 	arg_values = parser.parse_args()
 	return AttrDict(vars(arg_values))

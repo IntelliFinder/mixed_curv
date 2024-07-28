@@ -1,6 +1,6 @@
 from torch_geometric.datasets import TUDataset
-from torch_geometric.datasets import WebKB, WikipediaNetwork, Planetoid
-from torch_geometric.utils import to_networkx, from_networkx, to_undirected
+from torch_geometric.datasets import WebKB, Planetoid, LRGBDataset, MalNetTiny
+from torch_geometric.utils import to_networkx
 from GraphRicciCurvature.OllivierRicci import OllivierRicci
 
 import pathlib
@@ -10,18 +10,23 @@ import pandas as pd
 warnings.filterwarnings('ignore')
 
 ### Node classification ###
-cornell = WebKB(root="data", name="Cornell")
-wisconsin = WebKB(root="data", name="Wisconsin")
-texas = WebKB(root="data", name="Texas")
-chameleon = WikipediaNetwork(root="data", name="chameleon")
+cornell = WebKB(root="/tmp/data", name="Cornell")
+wisconsin = WebKB(root="/tmp/data", name="Wisconsin")
+texas = WebKB(root="/tmp/data", name="Texas")
 cora = Planetoid(root="data", name="cora")
-citeseer = Planetoid(root="data", name="citeseer")
+citeseer = Planetoid(root="/tmp/data", name="citeseer")
+pubmed = Planetoid(root="/tmp/data", name="pubmed")
 
 ### Graph classification ###
-mutag = list(TUDataset(root="data", name="MUTAG"))
-enzymes = list(TUDataset(root="data", name="ENZYMES"))
-proteins = list(TUDataset(root="data", name="PROTEINS"))
-imdb = list(TUDataset(root="data", name="IMDB-BINARY"))
+mutag = TUDataset(root="/tmp/MUTAG", name="MUTAG")
+enzymes = TUDataset(root="/tmp/ENZYMES", name="ENZYMES")
+proteins = TUDataset(root="/tmp/PROTEINS", name="PROTEINS")
+collab = TUDataset(root="/tmp/COLLAB", name="COLLAB")
+imdb = TUDataset(root="/tmp/IMDB-BINARY", name="IMDB-BINARY")
+reddit = TUDataset(root="/tmp/REDDIT-BINARY", name="REDDIT-BINARY")
+peptides = LRGBDataset(root="/tmp/Peptides-func", name="Peptides-func")
+pascalvoc = LRGBDataset(root="/tmp/PascalVOC-SP", name="PascalVOC-SP")
+malnet = MalNetTiny(root="/tmp/MalNetTiny")
 
 ### Datasets ###
 datasets = {
@@ -29,15 +34,19 @@ datasets = {
         'cornell' : cornell,
         'wisconsin' : wisconsin,
         'texas' : texas,
-        'chameleon' : chameleon,
         'cora' : cora,
-        'citeseer' : citeseer
+        'citeseer' : citeseer,
+        'pubmed': pubmed
     },
     'graph_cls' : {
         'mutag' : mutag,
         'enzymes' : enzymes,
         'proteins' : proteins,
-        'imdb' : imdb
+        'imdb' : imdb,
+        'reddit': reddit,
+        'peptides': peptides,
+        'pascalvoc': pascalvoc,
+        'malnet': malnet
     }
 }
 
@@ -78,7 +87,6 @@ for key in datasets['graph_cls']:
         'mean' : avg_curvatures.mean(),
         'std' : avg_curvatures.std()
     }
-
 
 # Display curvatures
 df = pd.DataFrame(data=data_statistics)

@@ -5,7 +5,6 @@ from sklearn.model_selection import train_test_split
 from torch_geometric.loader import DataLoader
 from torch.utils.data import random_split
 from torch.optim.lr_scheduler import ReduceLROnPlateau
-from math import inf
 
 from models.node_model import GCN
 
@@ -29,21 +28,17 @@ default_args = AttrDict(
     "batch_size": 64,
     "layer_type": "GCN",
     "num_relations": 1
-    }
-    )
+    })
 
 class Experiment:
     def __init__(self, args=None, dataset=None, train_mask=None, validation_mask=None, test_mask=None):
         self.args = default_args + args
         self.dataset = dataset
-        print(self.dataset[0])
         self.train_mask = train_mask
         self.validation_mask = validation_mask
         self.test_mask = test_mask
         self.loss_fn = torch.nn.CrossEntropyLoss()
-        print("self.dataset[0].x = ", self.dataset[0].x)
         self.args.input_dim = self.dataset[0].x.shape[1]
-        print("self.args.input_dim = ", self.args.input_dim)
         self.args.output_dim = torch.amax(self.dataset[0].y).item() + 1
         self.num_nodes = self.dataset[0].x.size(axis=0)
 

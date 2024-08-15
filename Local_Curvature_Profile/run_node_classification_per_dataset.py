@@ -1,5 +1,5 @@
 from attrdict import AttrDict
-from torch_geometric.datasets import WebKB, Planetoid
+from torch_geometric.datasets import WebKB, Planetoid, Amazon, Actor, HeterophilousGraphDataset, WikipediaNetwork
 from torch_geometric.utils import to_undirected, dropout_edge
 from experiments.node_classification import Experiment
 from torch_geometric.data import Data
@@ -71,7 +71,7 @@ if args.dataset == "texas":
     dataset = WebKB(root="data", name="Texas")
 elif args.dataset == "wisconsin":
     dataset = WebKB(root="data", name="Wisconsin")
-elif args.datset == "cornell":
+elif args.dataset == "cornell":
     dataset = WebKB(root="data", name="Cornell")
 elif args.dataset == "cora":
     dataset = Planetoid(root="data", name="cora")
@@ -79,7 +79,29 @@ elif args.dataset == "citeseer":
     dataset = Planetoid(root="data", name="citeseer")
 elif args.dataset == "pubmed":
     dataset = Planetoid(root="data", name="pubmed")
-
+elif args.dataset == "amazon-photo":
+    dataset = Amazon(root="data", name="Photo")
+elif args.dataset == "amazon-computers":
+    dataset = Amazon(root="data", name="Computers")
+elif args.dataset == "actor":
+    dataset = Actor(root="data")
+elif args.dataset == "roman-empire":
+    dataset = HeterophilousGraphDataset(root="data", name="Roman-empire")
+elif args.dataset == "amazon-ratings":
+    dataset = HeterophilousGraphDataset(root="data", name="Amazon-ratings")
+elif args.dataset == "minesweeper":
+    dataset = HeterophilousGraphDataset(root="data", name="Minesweeper")
+elif args.dataset == "tolokers":
+    dataset = HeterophilousGraphDataset(root="data", name="Tolokers")
+elif args.dataset == "questions":
+    dataset = HeterophilousGraphDataset(root="data", name="Questions")
+elif args.dataset == "chameleon":
+    dataset = WikipediaNetwork(root="data", name="chameleon")
+elif args.dataset == "squirrel":
+    dataset = WikipediaNetwork(root="data", name="squirrel")
+else:
+    print('Wrong dataset name')
+    sys.exit(0)
 
 # encode the dataset using the given encoding, if args.encoding is not None
 if args.encoding in ["LAPE", "RWPE", "LCP", "LDP", "SUB", "EGO", "EMB"]:
